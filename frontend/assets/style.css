@@ -1,63 +1,193 @@
-/* Main application */
+```css
+/* =====================================================
+   HR ASSISTANT - CHATGPT INSPIRED THEME
+   Compatible with modern Streamlit
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --sidebar-bg: #171717;
+    --sidebar-hover: #2a2a2a;
+    --main-bg: #ffffff;
+    --text-primary: #262626;
+    --text-secondary: #777777;
+    --border-color: #e5e5e5;
+    --accent: #10a37f;
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html,
+body,
+.stApp {
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--main-bg) !important;
+    color: var(--text-primary) !important;
+}
 
 .stApp {
-    background-color: #f7f9fc;
+    background: #ffffff !important;
 }
 
-/* Main headings */
+/* Main content */
+
+[data-testid="stMain"] {
+    background: #ffffff !important;
+}
+
+[data-testid="stMainBlockContainer"] {
+    max-width: 1100px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 5rem !important;
+}
+
+/* =====================================================
+   SIDEBAR - DARK THEME
+===================================================== */
+
+/* Sidebar outer container */
+
+section[data-testid="stSidebar"],
+section[data-testid="stSidebar"] > div {
+    background-color: #171717 !important;
+}
+
+/* Sidebar content */
+
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"],
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+    background-color: #171717 !important;
+}
+
+/* All sidebar text */
+
+section[data-testid="stSidebar"] {
+    color: #eeeeee !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] div,
+section[data-testid="stSidebar"] small {
+    color: #eeeeee !important;
+}
+
+/* Sidebar headings */
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    font-weight: 600 !important;
+}
+
+/* Sidebar divider */
+
+section[data-testid="stSidebar"] hr {
+    border-color: #393939 !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Sidebar buttons */
+
+section[data-testid="stSidebar"] .stButton button {
+    width: 100%;
+    background: transparent !important;
+    color: #eeeeee !important;
+    border: 1px solid transparent !important;
+    border-radius: 9px !important;
+    text-align: left !important;
+    padding: 8px 12px !important;
+    transition: background 0.2s ease;
+}
+
+section[data-testid="stSidebar"] .stButton button:hover {
+    background: #2a2a2a !important;
+    border-color: #393939 !important;
+}
+
+/* Sidebar text inputs */
+
+section[data-testid="stSidebar"] input {
+    background-color: #262626 !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+    border-radius: 9px !important;
+}
+
+/* Sidebar input placeholder */
+
+section[data-testid="stSidebar"] input::placeholder {
+    color: #aaaaaa !important;
+}
+
+/* Sidebar navigation links */
+
+section[data-testid="stSidebar"] a {
+    color: #eeeeee !important;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 h1 {
-    color: #172554;
-    font-weight: 700;
+    color: #262626 !important;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.7px;
 }
 
-h2, h3 {
-    color: #1e293b;
+h2,
+h3 {
+    color: #262626 !important;
+    font-weight: 600 !important;
 }
 
-/* Chat messages */
+p {
+    line-height: 1.7;
+}
+
+[data-testid="stHeader"] {
+    background: #ffffff !important;
+}
+
+/* =====================================================
+   CHAT MESSAGES
+===================================================== */
 
 [data-testid="stChatMessage"] {
-    border-radius: 14px;
-    padding: 12px;
-    margin-bottom: 12px;
+    background: transparent !important;
+    border: none !important;
+    padding: 18px 12px !important;
+    margin-bottom: 8px;
+    gap: 15px;
 }
 
-/* Chat input */
+/* Assistant message */
 
-[data-testid="stChatInput"] {
-    border-radius: 14px;
+[data-testid="stChatMessage"]:has(
+    [data-testid="chatAvatarIcon-assistant"]
+) {
+    background: #f7f7f8 !important;
+    border-radius: 14px !important;
 }
 
-/* Buttons */
+/* User message */
 
-.stButton button {
-    border-radius: 10px;
-    min-height: 42px;
-    font-weight: 600;
+[data-testid="stChatMessage"]:has(
+    [data-testid="chatAvatarIcon-user"]
+) {
+    background: #ffffff !important;
 }
 
-/* Sidebar */
+/* Chat text */
 
-[data-testid="stSidebar"] {
-    background-color: #111827;
-}
-
-[data-testid="stSidebar"] * {
-    color: white;
-}
-
-/* Metric cards */
-
-[data-testid="stMetric"] {
-    background-color: white;
-    padding: 20px;
-    border-radius: 14px;
-    border: 1px solid #e2e8f0;
-}
-
-/* Expanders */
-
-[data-testid="stExpander"] {
-    border-radius: 12px;
-}
+[data-testid="
