@@ -1,0 +1,63 @@
+/* Main application */
+
+.stApp {
+    background-color: #f7f9fc;
+}
+
+/* Main headings */
+
+h1 {
+    color: #172554;
+    font-weight: 700;
+}
+
+h2, h3 {
+    color: #1e293b;
+}
+
+/* Chat messages */
+
+[data-testid="stChatMessage"] {
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+/* Chat input */
+
+[data-testid="stChatInput"] {
+    border-radius: 14px;
+}
+
+/* Buttons */
+
+.stButton button {
+    border-radius: 10px;
+    min-height: 42px;
+    font-weight: 600;
+}
+
+/* Sidebar */
+
+[data-testid="stSidebar"] {
+    background-color: #111827;
+}
+
+[data-testid="stSidebar"] * {
+    color: white;
+}
+
+/* Metric cards */
+
+[data-testid="stMetric"] {
+    background-color: white;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Expanders */
+
+[data-testid="stExpander"] {
+    border-radius: 12px;
+}
