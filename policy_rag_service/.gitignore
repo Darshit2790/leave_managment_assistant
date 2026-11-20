@@ -1,0 +1,19 @@
+# secrets
+.env
+*.crt
+*.pem
+*.key
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# generated data
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+data/policies/*.pdf
+.fastembed_cache/
+.DS_Store

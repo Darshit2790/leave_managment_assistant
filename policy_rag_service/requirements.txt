@@ -1,0 +1,31 @@
+# ==========================================================
+# ALL DEPENDENCIES LIVE HERE  ->  pip install -r requirements.txt
+# Python 3.10+ recommended
+# ==========================================================
+
+# --- LLM API calls (Qwen3-8B via HTTPS + CA certificate) ---
+requests>=2.31.0
+
+# --- Configuration (.env loading) ---
+python-dotenv>=1.0.1
+
+# --- PDF ingestion / text extraction ---
+pypdf>=4.2.0
+
+# --- Embeddings (local, because the LLM server has no embeddings endpoint) ---
+fastembed>=0.3.6
+
+# --- Vector database ---
+chromadb>=0.5.0
+
+# --- REST API (Policy RAG service) ---
+fastapi>=0.110.0
+uvicorn>=0.29.0
+python-multipart>=0.0.9
+httpx>=0.27.0   # needed by FastAPI TestClient in tests
+
+# --- Sample data generator (scripts/generate_sample_policies.py) ---
+reportlab>=4.1.0
+
+# --- Tests ---
+pytest>=8.0.0
