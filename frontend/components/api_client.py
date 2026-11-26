@@ -29,6 +29,17 @@ class APIClient:
             **kwargs
         )
 
+        if not response.ok:
+            try:
+                detail = response.json().get("detail")
+            except ValueError:
+                detail = None
+            if detail:
+                raise requests.HTTPError(
+                    f"{response.status_code} error: {detail}",
+                    response=response
+                )
+
         response.raise_for_status()
 
         if response.status_code == 204:
@@ -124,6 +135,21 @@ class APIClient:
             "/api/v1/holidays"
         )
 
+    # -------------------------
+    # CONFIRM ACTION
+    # -------------------------
+
+    def confirm_action(self, action, payload):
+
+        return self._request(
+            "POST",
+            "/api/v1/chat/confirm",
+            json={
+                "action": action,
+                "payload": payload
+            }
+        )
+
 
 # Shared API client instance
 
@@ -136,16 +162,4 @@ def send_chat_message(message, session_id, employee_id):
         message,
         session_id,
         employee_id
-    )
-
-
-def confirm_action(self, action, payload):
-
-    return self._request(
-        "POST",
-        "/api/v1/chat/confirm",
-        json={
-            "action": action,
-            "payload": payload
-        }
     )

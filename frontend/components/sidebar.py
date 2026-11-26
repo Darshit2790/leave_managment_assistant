@@ -17,7 +17,7 @@ def render_sidebar():
             "Employee ID",
             value=st.session_state.get(
                 "employee_id",
-                "EMP001"
+                "EMP1001"
             )
         )
 

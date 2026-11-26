@@ -70,7 +70,7 @@ if "session_id" not in st.session_state:
 
 if "employee_id" not in st.session_state:
 
-    st.session_state.employee_id = "EMP001"
+    st.session_state.employee_id = "EMP1001"
 
 
 # -------------------------------

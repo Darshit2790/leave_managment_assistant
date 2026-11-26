@@ -1,0 +1,36 @@
+# ==========================================================
+#  Files that should never be committed
+# ==========================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Secrets (commit .env.example instead) ---
+.env
+.env.*
+!.env.example
+*.crt
+*.pem
+*.key
+
+# --- Local SQLite data (rebuilt from seed_data.py on startup) ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Generated RAG data ---
+policy_rag_service/data/vectorstore/
+.fastembed_cache/
+
+# --- Editors / OS ---
+.vs/
+.idea/
+.DS_Store
+Thumbs.db
