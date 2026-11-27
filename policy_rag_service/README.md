@@ -1,5 +1,21 @@
 # AI HR Assistant — Task 1: Document Intelligence (Policy RAG Service)
 
+## Streamlit employee assistant
+
+The Streamlit app adds employee sign-in, profile lookup, leave balances/history, holiday dates, and a chat workflow for leave applications. Pending applications reserve days immediately; employees review and confirm a request before it is recorded. The existing policy RAG service remains available alongside the UI.
+
+Run from this directory after installing `requirements.txt`:
+
+```powershell
+python -m streamlit run streamlit_app.py
+```
+
+On first launch the app creates `data/hr_database.json` from `data/hr_seed.json`. The mutable database is ignored by Git. Demo sign-in: `EMP1007` / `Welcome123!`. All 12 sample employees use the demo password. This authentication and JSON storage are for local demonstration only, not production use.
+
+To enable policy answers, place a valid `LLM_API_KEY` and `LLM_CA_CERT` path in a local `.env`, and run `python main.py ingest` once. Never commit `.env` or certificates.
+
+The chat uses deterministic intent routing for employee and leave operations; policy questions use the existing RAG + LLM pipeline. Leave requests are not auto-approved. A pending request reduces available balance until cancelled or handled by an approver.
+
 Ask natural-language questions about company HR policies. The assistant retrieves the most relevant
 passages from your policy PDFs and answers with **source file + page number citations**. If the
 policy documents don't contain the answer, it says so instead of guessing.

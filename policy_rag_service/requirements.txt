@@ -24,6 +24,12 @@ uvicorn>=0.29.0
 python-multipart>=0.0.9
 httpx>=0.27.0   # needed by FastAPI TestClient in tests
 
+# --- Streamlit chat application ---
+streamlit>=1.37.0
+
+# --- Streamlit chat application ---
+streamlit>=1.37.0
+
 # --- Sample data generator (scripts/generate_sample_policies.py) ---
 reportlab>=4.1.0
 

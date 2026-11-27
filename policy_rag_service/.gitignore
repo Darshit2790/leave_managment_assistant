@@ -15,5 +15,9 @@ venv/
 data/vectorstore/*
 !data/vectorstore/.gitkeep
 data/policies/*.pdf
+data/hr_database.json
+data/hr_database.json.tmp
+data/hr_database.json
+data/hr_database.json.tmp
 .fastembed_cache/
 .DS_Store
